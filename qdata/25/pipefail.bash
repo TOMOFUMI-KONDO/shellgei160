@@ -2,7 +2,7 @@
 set -o pipefail
 trap 'rm .tmp.top10' EXIT
 
-sort | head > .tmp.top10
+sort | sed -n 1,10P > .tmp.top10
 
 echo "+++++TOP 10+++++"
 cat .tmp.top10
